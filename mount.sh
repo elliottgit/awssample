@@ -26,15 +26,15 @@ then
   # mount volume
   echo "Mount EBS block volume."
   mkfs -t ext4 $ebsdevice
-  echo "Mount directory is /ebsvolume."
   mkdir /ebsvolume
   mount $ebsdevice /ebsvolume
   
   # edit mount fstab
   echo "Mount EBS volume on every system reboot."
   sudo cp /etc/fstab /etc/fstab.orig
-  echo '"$ebsuuid" /ebsvolume ext4 defaults,nofail 0 2' >> /etc/fstab
-
+  echo -e "$ebsuuid /ebsvolume next4 defaults,nofail 0 2" >> /etc/fstab
+  echo "Mount directory is /ebsvolume."
+  
 else
 
   echo "Edit the variables and try again"
