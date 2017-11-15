@@ -33,7 +33,7 @@ then
   # edit mount fstab
   echo "Mount EBS volume on every system reboot."
   sudo cp /etc/fstab /etc/fstab.orig
-  echo '$ebsuuid /ebsvolume ext4 defaults,nofail 0 2' >> /etc/fstab
+  echo '"$ebsuuid" /ebsvolume ext4 defaults,nofail 0 2' >> /etc/fstab
 
 else
 
