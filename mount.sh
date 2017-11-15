@@ -9,13 +9,13 @@
 
 # set variables
 export ebsdevice=
-export ebsuuid=
+# export ebsuuid=
 
 #==============================================================================
 
 # display variables
 echo "EBS Device name is $ebsdevice."
-echo "EBS Device uuid is $ebsuuid."
+# echo "EBS Device uuid is $ebsuuid."
 
 # check variables
 echo -e "Check the EBS volume variables and type y to start the script:"
@@ -32,7 +32,7 @@ then
   # edit mount fstab
   echo "Mount EBS volume on every system reboot."
   sudo cp /etc/fstab /etc/fstab.orig
-  echo -e "$ebsuuid /ebsvolume next4 defaults,nofail 0 2" >> /etc/fstab
+  echo -e "$ebsdevice /ebsvolume next4 defaults,nofail 0 2" >> /etc/fstab
   echo "Mount directory is /ebsvolume."
   
 else
