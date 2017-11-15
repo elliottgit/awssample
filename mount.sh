@@ -1,11 +1,10 @@
 #!/bin/bash
-#title           :mount.sh
-#description     :Bash script to mount ebs block volume.
-#author		       :Elliott Ning
-#date            :20171113
-#version         :1.2
-
-#==============================================================================
+#title:         mount.sh
+#description:   Bash script to mount ebs block volume.
+#author:        Elliott Ning
+#date:          20171114
+#version:       1.3
+#====================================================
 
 # get device name
 fdisk -l
@@ -14,7 +13,7 @@ read ebsdevice
 
 # mount volume
 echo "Mount EBS block volume."
-mkfs -t ext4 $ebsdevice
+yes | mkfs.ext4 $ebsdevice
 mkdir /ebsvolume
 mount $ebsdevice /ebsvolume
   
