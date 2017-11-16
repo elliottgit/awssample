@@ -1,5 +1,5 @@
 #!/bin/bash
-#title:         apache.sh
+#title:         ubuntu.sh
 #description:   Bash script to complete work sample.
 #author:        Elliott Ning
 #date:          20171115
@@ -15,10 +15,7 @@ ufw disable
 systemctl start apache2
 systemctl enable apache2
 
-#rsync -av /var/www/html /mnt/ebs
-
-#vi /etc/apache2/sites-enabled/000-default.conf
-#add /mnt/ebs/html
+rsync -av /var/www/html /mnt/ebs
 
 cd /mnt/ebs
 wget https://raw.githubusercontent.com/elliottgit/work/master/custom.conf
