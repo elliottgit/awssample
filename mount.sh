@@ -23,11 +23,10 @@ mount $ebsdevice $mountpoint
 chmod a+w $mountpoint
   
 # get device uuid
-file -s $ebsdevice
-echo -e "Enter the EBS UUID:"
-read ebsuuid
-#ebsuuid=uuid=`blkid -s UUID -o value $ebsdevice`
-#echo "$ebsuuid"
+#file -s $ebsdevice
+#echo -e "Enter the EBS UUID:"
+#read ebsuuid
+ebsuuid=UUID=`blkid -s UUID -o value $ebsdevice`
 
 # update mount fstab
 echo "Mount EBS volume on every system reboot."
