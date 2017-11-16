@@ -7,8 +7,12 @@
 #version:       1.2
 #====================================================
 
-# create directory if doesnt exist - optional
+# Get mount point directory
 #mkdir /mnt/ebs
+lsblk
+echo -e "Enter the EBS mount point:"
+read mountpoint
+# $mountpoint
 
 # download and install apache
 apt-get update
@@ -24,16 +28,16 @@ systemctl start apache2
 systemctl enable apache2
 
 # sync folders if any conent in default apache directory
-rsync -av /var/www/html /mnt/ebs
+rsync -av /var/www/html $mountpoint
 
 # set apache config file to use new document root
-wget https://raw.githubusercontent.com/elliottgit/work/master/custom.conf -P /mnt/ebs
-cp /mnt/ebs/custom.conf /etc/apache2/sites-enabled/000-default.conf
+wget https://raw.githubusercontent.com/elliottgit/work/master/custom.conf -P $mountpoint
+cp $mountpoint/custom.conf /etc/apache2/sites-enabled/000-default.conf
 systemctl reload apache2
 
 # change custom index page
-mv /mnt/ebs/html/index.html /mnt/ebs/html/backupindex
-wget https://raw.githubusercontent.com/elliottgit/work/master/index.html -P /mnt/ebs/html
+mv $mountpoint/html/index.html $mountpoint/html/backupindex
+wget https://raw.githubusercontent.com/elliottgit/work/master/index.html -P $mountpoint/html
 
 # get url for web page
 echo "Enter the URL below in your browser to see the website:"
