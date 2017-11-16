@@ -8,7 +8,7 @@
 #====================================================
 
 # create directory if doesnt exist - optional
-mkdir /mnt/ebs
+#mkdir /mnt/ebs
 
 # download and install apache
 apt-get update
