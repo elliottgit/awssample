@@ -3,21 +3,17 @@
 #description:   Bash script to mount ebs block volume.
 #author:        Elliott Ning
 #date:          20171114
-#version:       1.2
+#version:       1.3
 #====================================================
 
 # get device name
 fdisk -l
 echo -e "Enter the EBS device name for mounting:"
 read ebsdevice
-echo -e "The device name is $ebsdevice, and type y to continue:"
-read input
 
 # set mount point
 echo -e "Enter the mount point directory for the EBS volume $ebsdevice, for example: /mnt/ebs"
 read mountpoint
-echo -e "The mount point is $mountpoint, and type y to continue:"
-read input
 
 # mount volume
 echo "Mount EBS block volume."
@@ -27,10 +23,10 @@ mount $ebsdevice $mountpoint
 chmod a+w $mountpoint
   
 # get device uuid
-#file -s $ebsdevice
-#echo -e "Enter the EBS UUID:"
-#read ebsuuid
-ebsuuid=uuid=`blkid -s UUID -o value $ebsdevice`
+file -s $ebsdevice
+echo -e "Enter the EBS UUID:"
+read ebsuuid
+#ebsuuid=uuid=`blkid -s UUID -o value $ebsdevice`
 #file -s $ebsdevice
 #echo "$ebsuuid"
 
