@@ -16,6 +16,7 @@ echo "Mount EBS block volume."
 yes | mkfs.ext4 $ebsdevice
 mkdir /ebsvolume
 mount $ebsdevice /ebsvolume
+chmod a+w /ebsvolume
   
 # get device uuid
 file -s $ebsdevice
