@@ -33,7 +33,7 @@ systemctl reload apache2
 
 # change custom index page
 mv /mnt/ebs/html/index.html /mnt/ebs/html/backupindex
-wget https://raw.githubusercontent.com/elliottgit/demo/master/index.html -P /mnt/ebs/html
+wget https://raw.githubusercontent.com/elliottgit/work/master/index.html -P /mnt/ebs/html
 
 # get url for web page
 echo "Enter the URL below in your browser to see the website:"
