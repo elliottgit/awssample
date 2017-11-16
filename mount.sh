@@ -14,9 +14,9 @@ read ebsdevice
 # mount volume
 echo "Mount EBS block volume."
 yes | mkfs.ext4 $ebsdevice
-mkdir /ebsvolume
-mount $ebsdevice /ebsvolume
-chmod a+w /ebsvolume
+mkdir /mnt/ebs
+mount $ebsdevice /mnt/ebs
+chmod a+w /mnt/ebs
   
 # get device uuid
 file -s $ebsdevice
@@ -26,7 +26,7 @@ read ebsuuid
 # update mount fstab
 echo "Mount EBS volume on every system reboot."
 sudo cp /etc/fstab /etc/fstab.orig
-echo -e "$ebsuuid  /ebsvolume  ext4  defaults,nofail  0  2" >> /etc/fstab
-echo "Mount directory is /ebsvolume."
+echo -e "$ebsuuid  /mnt/ebs  ext4  defaults,nofail  0  2" >> /etc/fstab
+echo "Mount directory is /mnt/ebs."
 
 #EOF
