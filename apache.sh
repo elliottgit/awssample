@@ -1,9 +1,10 @@
 #!/bin/bash
-#title:         ubuntu.sh
-#description:   Bash script to complete work sample.
+#title:         apache.sh
+#description:   Bash script on Ubuntu to install and configure Apache.
+#os:            Ubuntu 16.04
 #author:        Elliott Ning
 #date:          20171115
-#version:       1.0
+#version:       1.2
 #====================================================
 
 # create directory if doesnt exist - optional
