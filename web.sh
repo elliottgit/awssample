@@ -38,6 +38,7 @@ cp $mountpoint/custom.conf /etc/apache2/sites-enabled/000-default.conf
 systemctl reload apache2
 
 # get custom index page
+rm $mountpoint/html/index.html
 wget https://raw.githubusercontent.com/elliottgit/work/master/index.html -P $mountpoint/html
 
 # get url for web page
