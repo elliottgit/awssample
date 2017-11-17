@@ -39,6 +39,7 @@ systemctl reload apache2
 
 # get custom index page
 rm $mountpoint/html/index.html
+wget https://objectstorage.us-phoenix-1.oraclecloud.com/p/cGDUptYdMuYizRCuGp3uFihqts4Xr7xuO0cF9KGNjbw/n/oraclemichaelme/b/image/o/home.jpg -P $mountpoint/html
 wget https://raw.githubusercontent.com/elliottgit/work/master/index.html -P $mountpoint/html
 
 # get url for web page
