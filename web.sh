@@ -32,7 +32,7 @@ rsync -av /var/www/html $mountpoint
 
 # set apache config file to use new document root
 wget https://raw.githubusercontent.com/elliottgit/work/master/custom.conf -P $mountpoint
-sed -i 's/root_directory_path_here/$mountpoint/g' $mountpoint/custom.conf
+sed -i "s|root_directory_path_here|$mountpoint|g" $mountpoint/custom.conf
 mv /etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/backup-default.conf
 cp $mountpoint/custom.conf /etc/apache2/sites-enabled/000-default.conf
 systemctl reload apache2
