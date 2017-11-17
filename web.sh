@@ -3,8 +3,8 @@
 #description:   Bash script on Ubuntu to install and configure Apache.
 #os:            Ubuntu 16.04
 #author:        Elliott Ning
-#date:          20171115
-#version:       1.2
+#date:          20171116
+#version:       1.4
 #====================================================
 
 # Get mount point directory
