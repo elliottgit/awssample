@@ -37,8 +37,7 @@ mv /etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/backup
 cp $mountpoint/custom.conf /etc/apache2/sites-enabled/000-default.conf
 systemctl reload apache2
 
-# change custom index page
-mv $mountpoint/html/index.html $mountpoint/html/backupindex
+# get custom index page
 wget https://raw.githubusercontent.com/elliottgit/work/master/index.html -P $mountpoint/html
 
 # get url for web page
