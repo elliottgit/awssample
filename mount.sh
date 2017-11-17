@@ -2,7 +2,7 @@
 #title:         mount.sh
 #description:   Bash script to mount ebs block volume.
 #author:        Elliott Ning
-#date:          20171114
+#date:          20171116
 #version:       1.3
 #====================================================
 
