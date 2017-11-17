@@ -37,7 +37,7 @@ echo -e "$ebsuuid  $mountpoint  ext4  defaults,nofail  0  2" >> /etc/fstab
 #lsblk
 #echo -e "Enter the EBS mount point:"
 #read mountpoint
-# $mountpoint
+#$mountpoint
 
 # ===download and install apache===
 apt-get update
